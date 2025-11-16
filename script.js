@@ -1,4 +1,3 @@
-// Отримання елементів
 const menu = document.getElementById('menu');
 const gameArea = document.getElementById('gameArea');
 const gameOver = document.getElementById('gameOver');
@@ -53,7 +52,6 @@ function startGame() {
     score = 0;
     scoreDisplay.textContent = score;
 
-    // Запуск фонової музики
     gameMusic = new Audio('the_witcher_3_wild_hunt_01 The Trail.mp3');
     gameMusic.loop = true;
     gameMusic.volume = 0.3;
@@ -63,7 +61,6 @@ function startGame() {
 }
 
 function createNewTarget() {
-    // Видалення попередньої цілі
     if (currentTarget) {
         currentTarget.remove();
     }
@@ -91,7 +88,6 @@ function createNewTarget() {
         clearInterval(gameInterval);
     }
 
-    // Новий інтервал
     gameInterval = setInterval(function() {
         timeLeft--;
         timerDisplay.textContent = timeLeft;
@@ -101,12 +97,10 @@ function createNewTarget() {
         }
     }, 1000);
 
-    // Обробка кліку
     target.addEventListener('click', function() {
         score += 1;
         scoreDisplay.textContent = score;
 
-        // Перевірка на перемогу
         if (score >= WIN_SCORE) {
             winGame();
         } else {
@@ -115,11 +109,9 @@ function createNewTarget() {
     });
 }
 
-// Перемога
 function winGame() {
     clearInterval(gameInterval);
 
-    // Зупинка фонової музики
     if (gameMusic) {
         gameMusic.pause();
         gameMusic.currentTime = 0;
@@ -128,7 +120,6 @@ function winGame() {
     gameArea.classList.add('hidden');
     gameOver.classList.remove('hidden');
 
-    // Зміна тексту на перемогу
     const gameOverTitle = document.querySelector('#gameOver h2');
     gameOverTitle.textContent = 'Молодець вояко!';
     gameOverTitle.style.color = '#4CAF50';
@@ -139,11 +130,9 @@ function winGame() {
     }
 }
 
-// Програш
 function endGame() {
     clearInterval(gameInterval);
 
-    // Зупинка фонової музики
     if (gameMusic) {
         gameMusic.pause();
         gameMusic.currentTime = 0;
@@ -152,7 +141,6 @@ function endGame() {
     gameArea.classList.add('hidden');
     gameOver.classList.remove('hidden');
 
-    // Зміна тексту на програш
     const gameOverTitle = document.querySelector('#gameOver h2');
     gameOverTitle.textContent = 'Game Over!';
     gameOverTitle.style.color = '#f44336';
@@ -163,7 +151,6 @@ function endGame() {
     }
 }
 
-// Скидання гри
 function resetGame() {
     score = 0;
     timeLeft = 0;
@@ -176,7 +163,6 @@ function resetGame() {
         currentTarget.remove();
     }
 
-    // Зупинка музики
     if (gameMusic) {
         gameMusic.pause();
         gameMusic.currentTime = 0;

@@ -11,17 +11,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    position: relative;
-}
-
-.watermark {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 48px;
-    color: rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    pointer-events: none;
 }
 
 .container {
