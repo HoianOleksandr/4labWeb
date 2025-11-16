@@ -52,7 +52,7 @@ function startGame() {
 
     gameMusic = new Audio('the_witcher_3_wild_hunt_01 The Trail.mp3');
     gameMusic.loop = true;
-    gameMusic.volume = 0.3;
+    gameMusic.volume = 0.1;
     gameMusic.play().catch(e => console.log('Музика не запустилась:', e));
 
     createNewTarget();
