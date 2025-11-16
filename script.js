@@ -10,7 +10,6 @@ const timerDisplay = document.getElementById('timer');
 const finalScoreDisplay = document.getElementById('finalScore');
 const canvas = document.getElementById('canvas');
 
-// Змінні гри
 let score = 0;
 let timeLeft = 0;
 let currentTarget = null;
@@ -19,7 +18,6 @@ let difficulty = '';
 let selectedColor = '';
 const WIN_SCORE = 50;
 
-// Музика
 let gameMusic = null;
 
 const difficultySettings = {
